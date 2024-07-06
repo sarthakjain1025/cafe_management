@@ -129,6 +129,7 @@ router.get("/get", auth.authenticateToken, checkRole.checkRole, (req, res) => {
 
 router.patch('/update',auth.authenticateToken,checkRole.checkRole,(req, res) => {
     let user = req.body;
+  
     var query = "update user set status=? where id=?";
     connection.query(query, [user.status, user.id], (err, results) => {
       if (!err) {

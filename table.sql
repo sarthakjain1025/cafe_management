@@ -17,3 +17,27 @@ create table category(
     primary key(id)
 );
 
+insert into category(id,name) values
+(1,'Admin');
+
+create table product(
+    id int not null AUTO_INCREMENT,
+    name varchar(255) NOT NULL,
+    categoryId integer NOT NULL,
+    description varchar(255),
+    price integer,
+    status varchar(20),
+    primary key(id)
+);
+
+create table bill(
+    id INT NOT NULL AUTO_INCREMENT,
+    uuid varchar(200) NOT NULL,
+    name varchar(255) NOT NULL,
+    email varchar(255) NOT NULL,
+    contactNumber varchar(20) NOT NULL,
+    paymentMethod varchar(50) NOT NULL,
+    total int NOT NULL, productDetails JSON DEFAULT NULL,
+    createdBy varchar(255) NOT NULL,
+    primary key(id)
+);

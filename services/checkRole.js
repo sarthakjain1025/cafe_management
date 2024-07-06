@@ -11,4 +11,4 @@ function checkRole(req,res,next)
             }
 }
 
-module.exports= {checkRole}
+module.exports= {checkRole: checkRole}
